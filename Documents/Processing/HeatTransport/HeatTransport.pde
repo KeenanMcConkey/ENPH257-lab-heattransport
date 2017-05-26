@@ -25,6 +25,10 @@ void setup() {
   table.addColumn("temp5");
   table.addColumn("temp6");
 }
+
+void draw() {
+  serialEvent(myPort);
+}
 void serialEvent(Serial myPort) {
   String tempS = myPort.readStringUntil('\n');
   if (tempS != null) {
