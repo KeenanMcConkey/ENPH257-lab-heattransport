@@ -1,34 +1,31 @@
 
 // ENPH 257 - Heat Transport
 
-#include <Time.h>
-#include <TimeLib.h>
-
 int numPins = 6;
-int sensorPins[] = {A0, A1, A2, A3, A4, A5}; // Initialize pins
+int sensorPins[] = {A5, A4, A3, A2, A1, A0}; // Initialize pins
 
 void setup() {
   Serial.begin(9600); // Start serial @ 9600 bauds 
+  analogReference(EXTERNAL); // Reference voltage set by AREF pin
 }
 
 void loop() {
-  float voltageReadings[numPins];
+  float voltageReadings[numPins]; // Temporarily store readings
   float tempReadings[numPins];
   
   for (int i = 0; i < numPins; i++) { // Read from all pins
-    voltageReadings[i] = analogRead(sensorPins[i]) * 5.0/1024.0;
-    tempReadings[i] = (voltageReadings[i]) * 100.0; // Convert from 10mV/˚C
-  }
+    voltageReadings[i] = analogRead(sensorPins[i]) * 3.3/1023.0; // Convert 10 bit to V
+    tempReadings[i] = (voltageReadings[i]) * 100.0; // Convert 10mV/˚C
+  } // Print data to serial for reading
   for (int i = 0; i < numPins; i++) {
     Serial.print(voltageReadings[i]);
     Serial.print(",");
   }
   for (int i = 0; i < numPins; i++) {
     Serial.print(tempReadings[i]);
-    if (i < numPins-1) {
-      Serial.print(",");
-    }
+    Serial.print(",");
   }
+  Serial.print(millis() / 1000); // Print the elapsed time
   Serial.println();
-  delay(1000);
+  delay(1000); // Run every 1 s
 }
