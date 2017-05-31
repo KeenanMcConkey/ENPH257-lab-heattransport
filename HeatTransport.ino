@@ -12,6 +12,7 @@ void setup() {
 void loop() {
   float voltageReadings[numPins]; // Temporarily store readings
   float tempReadings[numPins];
+  
   for (int i = 0; i < numPins; i++) { // Read from all pins
     voltageReadings[i] = analogRead(sensorPins[i]) * 3.3/1023.0; // Convert 10 bit to V
     tempReadings[i] = (voltageReadings[i]) * 100.0; // Convert 10mV/˚C
@@ -24,7 +25,7 @@ void loop() {
     Serial.print(tempReadings[i]);
     Serial.print(",");
   }
-  Serial.print(millis() / 1000); // Print the elapsed time
+  Serial.print(millis() / 100); // Print the elapsed time in 100s of ms
   Serial.println();
-  delay(1000); // Run every 0.1 s
+  delay(0.1); // Run every 0.1 s
 }
