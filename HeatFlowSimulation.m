@@ -47,25 +47,25 @@ rho = 2700; %density of aluminum.
 %For each slice, we have different conductivity(k), convection current (kc)
 %and emissivity (eps).
 
-voltage = 15; %check 
-resistance = 15; %check 
-powerIn = voltage^2 / resistance;
-powerEff = 1.0; %account for other things, like whether the power is actually going through the rod.
+%voltage = 15; %check 
+%resistance = 15; %check 
+powerIn = 10;
+powerEff = 0.6; %account for other things, like whether the power is actually going through the rod.
 
 %First slice parameters:
-epsFirst = 1.0; %Emissivity. High because of the power resistor's black case.
+epsFirst = 0.8; %Emissivity. High because of the power resistor's black case.
 kcFirst = 20.0; %Convection constant [W/m^2/K].
-kFirst = 200; %Conductvity.
+kFirst = 150; %Conductvity.
 
 %Mid slices parameters:
-epsMid = 1; %Emissivity. 
-kcMid = 20.0; %Convection constant [W/m^2/K].
-kMid = 200; %Conductvity.
+epsMid = 0.3; %Emissivity. 
+kcMid = 10.0; %Convection constant [W/m^2/K].
+kMid = 150; %Conductvity.
 
 %Last slice parameters:
-epsLast = 1; %Emissivity. High because of the power resistor's black case.
-kcLast = 20.0; %Convection constant [W/m^2/K].
-kLast = 200; %Conductvity.
+epsLast = 0.1; %Emissivity. High because of the power resistor's black case.
+kcLast = 10.0; %Convection constant [W/m^2/K].
+kLast = 150; %Conductvity.
 
 %Concise Calculations
 
