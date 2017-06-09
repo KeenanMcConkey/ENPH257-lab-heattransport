@@ -28,7 +28,6 @@ temp_avgs = [];
 num_readings = 10; % Readings to take before averaging out readings
 
 temp_last = 400.0;
-t_heat_start = 0.0;
 start_heat = false;
 
 for i=1:(size(temp,1)-num_readings)
@@ -76,7 +75,7 @@ end
 
 %Hightlight outputs
 TempData = temp;
-dt = 0.1; 
+dt = 1; 
 ExpTotalTime = dt*numel(time);
 end 
 

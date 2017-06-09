@@ -5,8 +5,8 @@ function HeatFlowSimulation
 %in our simulation
  
 %File to read.
-datafile = 'C:\Users\Daniel Kor\Desktop\HeatTransport_2017_6_5.csv';
-[TempExpData,ExpDt,ExpTotalTime]= ReadExpAndPlot(datafile);
+datafile = '/Users/Keenan/Documents/Processing/HeatTransport/HeatTransport_2017_6_9.csv';
+[TempExpData,ExpDt,ExpTotalTime]= heat_data_uncertainty(datafile);
 
 
 %Go to Simulation  
@@ -18,7 +18,7 @@ dt = 0.1;
 dx = length/numSlice; %[m]
 
 %Initialize time to match experimental data.
-Time = 6000; 
+Time = 6000;
 coolingInterval = 600; % manually change based on intervals to modulate power source.
 
 numTime = Time/dt;
