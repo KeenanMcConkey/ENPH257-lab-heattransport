@@ -1,4 +1,8 @@
-# ENPH257-lab-heattransport
-ENPH 257 Heat Transport Lab
+# ENPH257 Lab - Heat Transport
+## ENPH 257 Heat Transport Lab
+#### Group Members: Keenan McConkey, Glyn Finck, Austin Khorram, Daniel Kor
 
-Arduino code and Processing code
+This project involves thermal simulation and measurement for thermodynamics class ENPH 257. Heat transport through an aluminum beam was simulated in MATLAB and then compared to actual data taken from a real rod. An arduino sensor system was built to retrieve thermal data at different points along the rod. 
+
+Comparision of the real data to the our simulation:
+
