@@ -5,8 +5,8 @@ This project involves thermal simulation and measurement for thermodynamics clas
 
 Comparision ofreal data to our simulation:
 
-![data][data.png]
+![data](https://github.com/KeenanMcConkey/ENPH257-lab-heattransport/blob/master/data.png)
 
 Circuit diagram of sensor system:
 
-![circuit][circuit.png]
+![circuit](https://github.com/KeenanMcConkey/ENPH257-lab-heattransport/blob/master/circuit.png)
